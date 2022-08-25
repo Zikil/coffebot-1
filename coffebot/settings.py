@@ -16,7 +16,9 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'http://13.40.242.143:1337'
+]
 
 
 # Quick-start development settings - unsuitable for production
