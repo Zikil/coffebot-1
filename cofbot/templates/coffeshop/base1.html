@@ -1,0 +1,24 @@
+{% extends 'coffeshop/base.html' %}
+  {% block title %} CoffeShop {% endblock %}
+
+  {% block content1 %}
+    <div class="row">
+      <div class="col-9 tx-1">
+        <div class="md:flex md:items-center md:justify-between">
+          <div class="flex-1 min-w-0">
+            <h2 class="text-2xl font-bold leading-7 text-red-700 sm:text-xl sm:truncate">
+              {{ error }}
+            </h2>
+          </div>
+        </div>
+        {% block content %}
+        Welcome
+        {% endblock %}
+      </div>
+      <div class="col-3">
+        
+      </div>
+    </div>
+
+
+  {% endblock %}
