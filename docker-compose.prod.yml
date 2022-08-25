@@ -24,6 +24,8 @@ services:
     command: python manage.py bot
     volumes:
       - .:/usr/src/app/
+    env_file:
+      - .env.prod
     depends_on:
       - db
   nginx:
