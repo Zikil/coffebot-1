@@ -1,13 +1,14 @@
 from django.core.management.base import BaseCommand, CommandError
 from django.conf import settings
 from cofbot.models import *
+from coffebot.settings import TOKEN
 import os 
 from datetime import datetime, timezone, timedelta
 from telegram.ext import Updater, CommandHandler, dispatcher
 from telegram.ext import MessageHandler, Filters, InlineQueryHandler
 import telegram
+from telegram import Bot, Update, BotCommand
 
-TOKEN = '1033970790:AAHgVbhB3yDw38jC4CIiEoi6jzbP5k_h0HQ'
 
 def add_message(update, context):
     chat_id = update.message.chat_id
@@ -37,7 +38,7 @@ class Command(BaseCommand):
         username = ''
         code = chat_id
         context.bot.send_message(chat_id=update.effective_chat.id, 
-            text="I'm a CoffeBot, your code " + str(code) + "!"
+            text="I'm a CoffeBot! \nYour code " + str(code) + "!" ,
         )
         print('--')
         if update.message.from_user.last_name:
